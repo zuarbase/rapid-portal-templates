@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>ZWAF - Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <script src="/built/zportal.js"></script>
+</head>
+<body class="h-100">
+
+    <z-background-visual src="/assets/background.jpg" type="image"></z-background-visual>
+
+    <div class="container h-100">
+        <div class="row h-25">
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-0 col-sm-1 col-md-2 col-lg-3 col-xl-4"></div>
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+                <div class="shadow px-5 py-3" style="background-color: rgba(254,242,240, .8)">
+                    <div class="login-logo-image-wrapper">
+                    </div>
+                
+                    <p class="helper-text">&nbsp;</p>
+                    <z-login-error></z-login-error>
+
+                    <div class="mb-3">
+                        <z-login-username-input label="User"></z-login-username-input>
+                    </div>
+                    <div class="mb-3">
+                        <z-login-password-input></z-login-password-input>
+                    </div>
+
+                    <div class="mb-3">
+                        <z-login-tableau-server-url-input type="hidden"></z-login-tableau-server-url-input>
+                        <z-login-tableau-server-site-input type="hidden"></z-login-tableau-server-site-input>
+
+                        <z-login-tableau-server-site-dropdown></z-login-tableau-server-site-dropdown>
+                    </div>
+
+                    <div class="mb-3">
+                        <z-login-submit-button class="d-grid gap-2"></z-login-submit-button>
+                    </div>
+                    <p class="text-center">Powered by <a href="https://www.zuar.com/">Zuar</a></p>
+                </div>
+            </div>
+            <div class="col-xs-0 col-sm-1 col-md-2 col-lg-3 col-xl-4"></div>
+        </div>
+
+    </div>
+
+    <script>
+        let form = document.querySelector('form');
+        // if (window.location.search) {
+        //     form.action = form.action + window.location.search;
+        // }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        // let loc = urlParams.get('location');
+        // if (loc) {
+        //     let input = document.createElement('input');
+        //     input.setAttribute('type', 'hidden');
+        //     input.setAttribute('name', 'location');
+        //     input.setAttribute('value', loc);
+        //     form.appendChild(input);
+        // }
+        
+        // TODO - move to Vue
+        let site = urlParams.get('site');
+        if (site) {
+            document.querySelector('.helper-text').innerHTML = 'Site: ' + site;
+        }
+        let username=urlParams.get('username');
+        if (username) {
+            let input = document.querySelector('input[name="username"]');
+            input.setAttribute('value', username);
+            input.setAttribute('type', 'hidden')
+
+            let element = document.createElement('p')
+            element.classList.add('form-control');
+            element.innerHTML = username;
+
+            input.parentNode.insertBefore(element, input);
+
+            document.body.classList.add('embedded');
+        }
+    </script>
+</body>
+</html>
