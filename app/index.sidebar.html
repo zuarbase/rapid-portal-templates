@@ -17,10 +17,11 @@
     <script src="/built/zportal.js"></script>
   </head>
   <body>
+    <z-customizer></z-customizer>
     <header id="header" class="bg-primary vw-100">
       <div class="d-flex justify-content-between p-2">
         <a class="navbar-brand" href="#">
-          <img src="https://zuar.com/img/logo.svg" alt="" height="40">
+          <z-logo height="40"></z-logo>
         </a>
         <z-nav-bar variant="primary"></z-nav-bar>
       </div>
@@ -28,7 +29,7 @@
     <div id="content-container">
         <div id="sidebar">
             <div class="bg-light text-dark h-100 overflow-scroll">
-                <z-view-list list-type="vertical" tags="dev,real-estate,oil-and-gas" favorite-variant-type="info"></z-view-list>
+                <z-view-list list-type="vertical" tags="oil-and-gas" favorite-variant-type="info"></z-view-list>
             </div>
         </div>
         <div id="content" class="bg-gray overflow-scroll">
