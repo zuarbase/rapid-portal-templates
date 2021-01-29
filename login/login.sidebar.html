@@ -12,20 +12,29 @@
 </head>
 <body class="h-100">
 
-    <div class="container-fluid h-100">
+    <z-rapid-portal-config
+        logo="/assets/logo.png"
+        primary-color="#0E4CA1"
+        secondary-color="#77d0d1"
+        login-bg-src="/assets/background.mp4"
+        tags="dev,real-estate,oil-and-gas">
+    </z-rapid-portal-config>
 
+    <div class="container-fluid h-100">
+        <z-background-visual src="/assets/gears.jpg" type="image"></z-background-visual>
         <div class="row h-25">
-            <div class="col-4 bg-dark border-end border-secondary border-2"></div>
+            <div class="col-4 border-end border-secondary border-2"></div>
             <div class="col-8 bg-light"></div>
         </div>
         <div class="row h-75">
-            <div class="col-4 bg-dark border-end border-secondary border-2">
+            <div class="col-4 border-end border-secondary border-2">
                 <div class="text-light text-end">
                     <h2>Portal Login Page</h2>
                     <p>Powered by <a href="https://www.zuar.com/">Zuar</a></p>
                 </div>
             </div>
             <div class="col-8 bg-light">
+                
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="mb-1">
@@ -44,7 +53,7 @@
                             <z-login-password-input></z-login-password-input>
                         </div>
                         <z-login-error></z-login-error>
-                        <z-login-submit-button class="text-right"></z-login-submit-button>
+                        <z-login-submit-button text-color="white"></z-login-submit-button>
                     </div>
                 </div>
             </div>
