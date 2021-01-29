@@ -17,25 +17,37 @@
     <script src="/built/zportal.js"></script>
   </head>
   <body>
-    <z-customizer></z-customizer>
-    <header id="header" class="bg-primary vw-100">
+    <z-rapid-portal-config
+        logo="/assets/logo.png"
+        primary-color="#0E4CA1"
+        secondary-color="#77d0d1"
+        login-bg-src="/assets/background.jpg"
+        tags="dev,real-estate,oil-and-gas">
+    </z-rapid-portal-config>
+
+    
+    <header id="header" class="bg-primary vw-100 position-sticky top-0" style="z-index: 100">
       <div class="d-flex justify-content-between p-2">
-        <a class="navbar-brand" href="#">
-          <z-logo height="40"></z-logo>
-        </a>
+        <z-logo height="38" class=""></z-logo>
         <z-nav-bar variant="primary"></z-nav-bar>
       </div>
     </header>
-    <div id="content-container">
-        <div id="sidebar">
-            <div class="bg-light text-dark h-100 overflow-scroll">
-                <z-view-list list-type="vertical" tags="oil-and-gas" favorite-variant-type="info"></z-view-list>
+    <div class="container-fluid gx-0">
+      <div class="row gx-0">
+          <div class="col-md-2 bg-light position-fixed top-0 bottom-0 left-0">
+            <div class="position-sticky overflow-auto" style="top: 54px; height: calc(100vh - 48px);"> <!-- set values to height of header -->
+              <div class="bg-light text-dark">
+                  <z-view-list list-type="vertical" tags="oil-and-gas,real-estate" favorite-variant-type="info"></z-view-list>
+              </div>
             </div>
-        </div>
-        <div id="content" class="bg-gray overflow-scroll">
-            <z-tableau-viz initial-viz="https://tableau.zuar.com/#/site/Demo/views/OilandGasDemo/DashboardStateOilProduction"></z-tableau-viz>
-        </div>
+          </div>
+          <main class="col-md-9 ms-auto col-lg-10 pt-3 px-4">
+              <z-tableau-viz initial-viz="https://tableau.zuar.com/#/site/Demo/views/OilandGasDemo/DashboardStateOilProduction"></z-tableau-viz>
+          </main>
+      </div>
     </div>
+
+    <z-customizer position="bottom"></z-customizer>
 
     <user-edit-modal
         server=""
