@@ -4,48 +4,40 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta z-template="index.default.html">
     <title>Custom Portal 2 - Demo</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <!-- <link href="/css/bootstrap.css" rel="stylesheet"> -->
     <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/layout.sidebar.css" rel="stylesheet">
 
     <script src="https://localhost.zuarbase.net/javascripts/api/tableau-2.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
     <script src="/built/zportal.js"></script>
   </head>
   <body>
-    <z-rapid-portal-config
-        logo="/assets/logo.png"
-        primary-color="#0E4CA1"
-        secondary-color="#77d0d1"
-        login-bg-src="/assets/background.jpg"
-        tags="dev,real-estate,oil-and-gas">
-    </z-rapid-portal-config>
-
     <z-customizer></z-customizer>
-    <header class="bg-primary vw-100">
-      <div class="container d-flex justify-content-between py-2">
-        <a class="navbar-brand" href="#">
-          <z-logo height="40"></z-logo>
-        </a>
+
+    <header id="header" class="bg-primary vw-100 position-sticky top-0" style="z-index: 100">
+      <div class="d-flex justify-content-between p-2">
+        <z-logo height="38" class=""></z-logo>
         <z-nav-bar variant="primary"></z-nav-bar>
       </div>
     </header>
-    <div class="row gx-0">
-      <z-tableau-viz alignment="center" initial-viz="https://tableau.zuar.com/#/site/Demo/views/OilandGasDemo/DashboardStateOilProduction"></z-tableau-viz>
-    </div>
-    <div class="row gx-0 bg-light">
-      <section class="main-content">
-        <div class="container">
-            <div class="row mt-4">
-              <z-view-list tags="dev,real-estate,oil-and-gas" favorite-variant-type="info"></z-view-list>
+    <div class="container-fluid gx-0">
+      <div class="row gx-0">
+          <div class="col-md-2 bg-light position-fixed top-0 bottom-0 left-0">
+            <div class="position-sticky overflow-auto" style="top: 54px; height: calc(100vh - 48px);"> <!-- set values to height of header -->
+              <div class="bg-light text-dark">
+                  <z-view-list list-type="vertical" tags="oil-and-gas,real-estate" favorite-variant-type="info"></z-view-list>
+              </div>
             </div>
-        </div>
-      </section>
+          </div>
+          <main class="col-md-9 ms-auto col-lg-10 pt-3 px-4">
+              <z-tableau-viz initial-viz="https://tableau.zuar.com/#/site/Demo/views/OilandGasDemo/DashboardStateOilProduction"></z-tableau-viz>
+          </main>
+      </div>
     </div>
 
     <user-edit-modal
