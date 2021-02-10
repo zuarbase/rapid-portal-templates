@@ -21,7 +21,9 @@
     
     <header id="header" class="bg-primary vw-100 position-sticky top-0" style="z-index: 100">
       <div class="d-flex justify-content-between p-2">
-        <z-logo height="38" class=""></z-logo>
+        <a class="navbar-brand" href="/">
+          <z-logo height="30" class=""></z-logo>
+        </a>
         <div class="d-flex">
             <z-nav-download-button variant="primary"></z-nav-download-button>
             <z-nav-share-button variant="primary"></z-nav-share-button>
@@ -37,7 +39,7 @@
     <div class="container-fluid gx-0">
       <div class="row gx-0">
           <div class="col-md-2 bg-light position-fixed top-0 bottom-0 left-0">
-            <div class="position-sticky overflow-auto" style="top: 54px; height: calc(100vh - 48px);"> <!-- set values to height of header -->
+            <div class="position-sticky overflow-auto" style="top: 54px; height: calc(100vh - 56px);"> <!-- set values to height of header -->
               <div class="bg-light text-dark">
                   <z-view-list list-type="vertical"></z-view-list>
               </div>
