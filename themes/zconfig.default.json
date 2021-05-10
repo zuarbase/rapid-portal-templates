@@ -1,0 +1,13 @@
+{
+  "logo": "/assets/logo.png",
+  "primaryColor": "#fa225b",
+  "headerIconColor": "#e4e4e4",
+  "loginFormColor": "#f9f1f8",
+  "headerBgColor": "#000000",
+  "loginBgSrc": "/assets/background.jpg",
+  "tags": "embed",
+  "appTemplate": "index.default.html",
+  "loginTemplate": "login.default.html",
+  "templateBranch": null,
+  "templateRepo": null
+}
