@@ -1,6 +1,6 @@
 {
   "logo": "/assets/logo.png",
-  "favicon": "/assets/favicon.png",
+  "favicon": "/assets/favicon.ico",
   "primaryColor": "#fa225b",
   "headerIconColor": "#e4e4e4",
   "loginFormColor": "#f9f1f8",
